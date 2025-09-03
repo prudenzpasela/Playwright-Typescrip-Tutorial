@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "target": "ESNExt", // complile to the latest ECMAScript version
+        "module": "commonjs", // Module system for node.js compilation
+        "moduleResolution": "node", // Resolve modules like Node.js
+        "strict": true, // enable all strict type-checking options
+        "esModuleInterop": true, // allows default imports from modules with no default export
+        "skipLibCheck": true, // skip type checking of declaration files
+        "forceConsistentCasingInFileNames": true, // Ensure consistent casing in file names
+        "outDir": "./dist", // output directory for compiled files
+        "rootDir": ".", // Root directory of typescript files
+        "resolveJsonModule": true, // Allow importing JSON files
+        "types": ["node", "playwright"], // Include Node.js type definitions
+        "declaration": true, // Generate .d.ts files for type 
+        "sourceMap": true, // Generate source maps for easier debugging
+    },
+    "include": [
+        "src/**/*.ts", // Include all TypeScript files in the src directory folder
+        "tests/**/*.ts" // Include all TypeScript files in the tests directory folder
+    ],
+    "exclude": [
+        "node_modules", // Exclude node_modules from compilation
+        "dist" // Exclude the output directory
+    ]
+}

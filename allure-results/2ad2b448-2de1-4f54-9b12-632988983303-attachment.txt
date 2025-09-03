@@ -1,0 +1,6 @@
+PlaywrightTutorialFullCourse
+PostmanCollectionsByTestersTalk
+PlaywrightAPITestingTutorial
+RestAssuredAPITestingFramework
+PlaywrightTypeScriptTutorialFullCourse
+CypressTutorialFullCourse
