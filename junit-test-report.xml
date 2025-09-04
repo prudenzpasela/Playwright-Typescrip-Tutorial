@@ -1,9 +1,31 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="5.431362999999954">
-<testsuite name="Chapter04\07_Checkbox_Radiobutton.spec.ts" timestamp="2025-09-02T08:48:03.384Z" hostname="Google Chrome" tests="1" failures="0" skipped="0" time="4.011" errors="0">
-<testcase name="Checkbox and Radio button" classname="Chapter04\07_Checkbox_Radiobutton.spec.ts" time="4.011">
+<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="1.671456">
+<testsuite name="Chapter05\01_Read_ENV_file.spec.ts" timestamp="2025-09-03T05:23:51.303Z" hostname="Google Chrome" tests="1" failures="1" skipped="0" time="0.219" errors="0">
+<testcase name="Read ENV File config" classname="Chapter05\01_Read_ENV_file.spec.ts" time="0.219">
+<failure message="01_Read_ENV_file.spec.ts:6:5 Read ENV File config" type="FAILURE">
+<![CDATA[  [Google Chrome] › Chapter05\01_Read_ENV_file.spec.ts:6:5 › Read ENV File config ──────────────────
+
+    Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL
+    Call log:
+      - navigating to "undefined", waiting until "load"
+
+
+       6 | test('Read ENV File config', async ({ page }) => {
+       7 |     // Go to URL
+    >  8 |     await page.goto(`${process.env.GOOGLE_URL}`);
+         |                ^
+       9 |
+      10 |     // Search with keywords
+      11 |     await page.getByLabel('Search', { exact: true }).fill('Playwright by testers talk');
+        at D:\PRUDENZ\Documents\Playwright\tests\Chapter05\01_Read_ENV_file.spec.ts:8:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\Chapter05-01_Read_ENV_file-Read-ENV-File-config-Google-Chrome\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
 <system-out>
 <![CDATA[
-[[ATTACHMENT|test-results\Chapter04-07_Checkbox_Radiobutton-Checkbox-and-Radio-button-Google-Chrome\test-finished-1.png]]
+[[ATTACHMENT|test-results\Chapter05-01_Read_ENV_file-Read-ENV-File-config-Google-Chrome\test-failed-1.png]]
 ]]>
 </system-out>
 </testcase>

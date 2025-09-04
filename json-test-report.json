@@ -6,7 +6,7 @@
     "fullyParallel": true,
     "globalSetup": null,
     "globalTeardown": null,
-    "globalTimeout": 3600000,
+    "globalTimeout": 0,
     "grep": {},
     "grepInvert": null,
     "maxFailures": 0,
@@ -64,7 +64,7 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 60000
+        "timeout": 10000
       }
     ],
     "shard": null,
@@ -76,61 +76,85 @@
   },
   "suites": [
     {
-      "title": "Chapter04\\07_Checkbox_Radiobutton.spec.ts",
-      "file": "Chapter04/07_Checkbox_Radiobutton.spec.ts",
+      "title": "Chapter05\\01_Read_ENV_file.spec.ts",
+      "file": "Chapter05/01_Read_ENV_file.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Checkbox and Radio button",
-          "ok": true,
+          "title": "Read ENV File config",
+          "ok": false,
           "tags": [],
           "tests": [
             {
-              "timeout": 60000,
+              "timeout": 10000,
               "annotations": [],
               "expectedStatus": "passed",
               "projectId": "Google Chrome",
               "projectName": "Google Chrome",
               "results": [
                 {
-                  "workerIndex": 2,
+                  "workerIndex": 0,
                   "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 4011,
-                  "errors": [],
+                  "status": "failed",
+                  "duration": 219,
+                  "error": {
+                    "message": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"undefined\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"undefined\", waiting until \"load\"\u001b[22m\n\n    at D:\\PRUDENZ\\Documents\\Playwright\\tests\\Chapter05\\01_Read_ENV_file.spec.ts:8:16",
+                    "location": {
+                      "file": "D:\\PRUDENZ\\Documents\\Playwright\\tests\\Chapter05\\01_Read_ENV_file.spec.ts",
+                      "column": 16,
+                      "line": 8
+                    },
+                    "snippet": "\u001b[0m \u001b[90m  6 |\u001b[39m test(\u001b[32m'Read ENV File config'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m  7 |\u001b[39m     \u001b[90m// Go to URL\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m`${process.env.GOOGLE_URL}`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m\n \u001b[90m 10 |\u001b[39m     \u001b[90m// Search with keywords\u001b[39m\n \u001b[90m 11 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByLabel(\u001b[32m'Search'\u001b[39m\u001b[33m,\u001b[39m { exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\u001b[33m.\u001b[39mfill(\u001b[32m'Playwright by testers talk'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\PRUDENZ\\Documents\\Playwright\\tests\\Chapter05\\01_Read_ENV_file.spec.ts",
+                        "column": 16,
+                        "line": 8
+                      },
+                      "message": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n\u001b[2m  - navigating to \"undefined\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m  6 |\u001b[39m test(\u001b[32m'Read ENV File config'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m  7 |\u001b[39m     \u001b[90m// Go to URL\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m`${process.env.GOOGLE_URL}`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m\n \u001b[90m 10 |\u001b[39m     \u001b[90m// Search with keywords\u001b[39m\n \u001b[90m 11 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByLabel(\u001b[32m'Search'\u001b[39m\u001b[33m,\u001b[39m { exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\u001b[33m.\u001b[39mfill(\u001b[32m'Playwright by testers talk'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at D:\\PRUDENZ\\Documents\\Playwright\\tests\\Chapter05\\01_Read_ENV_file.spec.ts:8:16\u001b[22m"
+                    }
+                  ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2025-09-02T08:48:03.988Z",
+                  "startTime": "2025-09-03T05:23:51.912Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "D:\\PRUDENZ\\Documents\\Playwright\\test-results\\Chapter04-07_Checkbox_Radiobutton-Checkbox-and-Radio-button-Google-Chrome\\test-finished-1.png"
+                      "path": "D:\\PRUDENZ\\Documents\\Playwright\\test-results\\Chapter05-01_Read_ENV_file-Read-ENV-File-config-Google-Chrome\\test-failed-1.png"
                     }
-                  ]
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\PRUDENZ\\Documents\\Playwright\\tests\\Chapter05\\01_Read_ENV_file.spec.ts",
+                    "column": 16,
+                    "line": 8
+                  }
                 }
               ],
-              "status": "expected"
+              "status": "unexpected"
             }
           ],
-          "id": "a7c9f108f5bd2b05b5bb-795c3bb1573e096cf6ad",
-          "file": "Chapter04/07_Checkbox_Radiobutton.spec.ts",
-          "line": 5,
-          "column": 9
+          "id": "7a231a8492ebc01b3cda-78103b4e1dfc2b9bb219",
+          "file": "Chapter05/01_Read_ENV_file.spec.ts",
+          "line": 6,
+          "column": 5
         }
       ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-09-02T08:48:02.733Z",
-    "duration": 5431.362999999954,
-    "expected": 1,
+    "startTime": "2025-09-03T05:23:50.621Z",
+    "duration": 1671.4560000000001,
+    "expected": 0,
     "skipped": 0,
-    "unexpected": 0,
+    "unexpected": 1,
     "flaky": 0
   }
 }
