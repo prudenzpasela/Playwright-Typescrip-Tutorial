@@ -4,9 +4,9 @@ import { defineConfig, devices } from '@playwright/test';
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-// import dotenv from 'dotenv';
-// import path from 'path';
-// dotenv.config({ path: path.resolve(__dirname, '.env') });
+import dotenv from 'dotenv';
+import path from 'path';
+dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -56,6 +56,15 @@ export default defineConfig({
     trace: 'on',
 
     actionTimeout: 100000,
+
+    // set browser to be in full screen
+    // launchOptions: {
+    //   args: ['--start-maximized'],
+    // }
+
+
+
+
   },
 
   /* Configure projects for major browsers */
@@ -92,7 +101,10 @@ export default defineConfig({
     // },
     {
       name: 'Google Chrome',
-      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+
+      // Viewport set to Full HD in global level
+      use: { ...devices['Desktop Chrome'], channel: 'chrome', viewport: { width : 1920, height: 1080 }, },
+      
     },
   ],
 
